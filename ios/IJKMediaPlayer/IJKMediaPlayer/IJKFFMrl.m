@@ -52,8 +52,11 @@
 
                 _resolvedMrl = [[NSString alloc] initWithFormat:@"concat://%@", _tmpFile];
             }
+        } else if ([_rawMrl hasPrefix:@"file:///"]) {
+            _rawMrl = [_rawMrl stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+            _resolvedMrl = _rawMrl;
         }
-
+        
         if (_resolvedMrl == nil)
             _resolvedMrl = _rawMrl;
     }
