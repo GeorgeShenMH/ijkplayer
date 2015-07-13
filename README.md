@@ -2,7 +2,6 @@ ijkplayer
 =========
 - Video player based on [ffplay](http://ffmpeg.org)
  - Android: [MediaPlayer-like](android/ijkplayer/player-java/src/main/java/tv/danmaku/ijk/media/player/IMediaPlayer.java)
- - iOS: [MediaPlayer.framework-like](ios/IJKMediaPlayer/IJKMediaPlayer/IJKMediaPlayback.h)
 
 ### My Build Enviroment
 - Common
@@ -13,7 +12,7 @@ ijkplayer
 - iOS
  - Xcode 6.3.2 (6D2105)
 - [HomeBrew](http://brew.sh)
- - ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+ - ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
  - brew install git
 
 ### Latest Changes
@@ -41,15 +40,28 @@ ijkplayer
 ### TODO
 - iOS
  - api: AVFoundation-like
-- Build 
- - cygwin compatibility
 
 ### NOT-ON-PLAN
 - obsolete platforms (Android: API-8 and below; iOS: below 5.1.1)
 - obsolete cpu: ARMv5, ARMv6, MIPS (I don't even have these types of devices…)
 - native subtitle render
+- avfilter support
 
 ### Before Build
+```
+# install homebrew, git, yasm
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew install git
+brew install yasm
+
+# add these lines to your ~/.bash_profile or ~/.profile
+# export ANDROID_SDK=<your sdk path>
+# export ANDROID_NDK=<your ndk path>
+
+# on Cygwin
+# install git, make, yasm
+```
+
 - If you prefer more codec/format
 ```
 cd config
